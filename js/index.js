@@ -9,8 +9,8 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
-    "button": "Get Started",
+    "h1": "DOM<br>Is<br>Awesome",
+    "button": "Get Started!",
     "img-src": "img/header-img.png"
   },
   "main-content": {
@@ -28,7 +28,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street<br>Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -45,6 +45,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 // Start my code...
 
 // Constant variables
+const doc = document;
 const headerNavA = document.querySelectorAll("nav a");
 const headerNavAArray = Array.from(headerNavA);
 const ctaImg = document.getElementById("cta-img");
@@ -57,45 +58,75 @@ const bottomContent = document.querySelectorAll(".bottom-content .text-content")
 const bottomContentArray = Array.from(bottomContent);
 const contact = document.querySelectorAll(".contact");
 const contactArray = Array.from(contact);
-
+const footerP = document.querySelector("footer");
+const addNavA = document.getElementsByTagName("nav");
+const newNav1 = document.createElement("a");
+const newNav2 = document.createElement("a");
 
 // Navigation
-headerNavAArray[0].innerHTML = "Services";
-headerNavAArray[1].innerHTML = "Product";
-headerNavAArray[2].innerHTML = "Vision";
-headerNavAArray[3].innerHTML = "Features";
-headerNavAArray[4].innerHTML = "About";
-headerNavAArray[5].innerHTML = "Contact";
+// headerNavAArray[0].innerHTML = siteContent['nav']['nav-item-1'];
+// headerNavAArray[1].innerHTML = siteContent['nav']['nav-item-2'];
+// headerNavAArray[2].innerHTML = siteContent['nav']['nav-item-3'];
+// headerNavAArray[3].innerHTML = siteContent['nav']['nav-item-4'];
+// headerNavAArray[4].innerHTML = siteContent['nav']['nav-item-5'];
+// headerNavAArray[5].innerHTML = siteContent['nav']['nav-item-6'];
+
+// or...
+
+for (let i = 0; i < headerNavAArray.length; i++) {
+    let navItem = `nav-item-${i + 1}`;
+    headerNavAArray[i].innerHTML = siteContent['nav'][navItem];
+
+    // Stretch
+    headerNavAArray[i].style.color = 'green';
+}
+
+newNav1.innerHTML = "NewNav1";
+newNav1.style.color = 'green';
+newNav2.innerHTML = "NewNav2";
+newNav2.style.color = 'green';
+addNavA[0].prepend(newNav1);
+addNavA[0].appendChild(newNav2);
 
 
 // Header
-ctaImg.src = 'img/header-img.png';
-ctaH1.innerHTML = "DOM<br>is<br>awesome"
-ctaButton.innerHTML = "Get Started!"
+ctaImg.src = siteContent['cta']['img-src'];
+ctaH1.innerHTML = siteContent['cta']['h1'];
+ctaButton.innerHTML = siteContent['cta']['button'];
 
 
 // Main content top
-topContentArray[0].children[0].innerHTML = "features";
-topContentArray[0].children[1].innerHTML = "Features content lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod quis. Nulla facilisi cras fermentum odio eu feugiat pretium nibh. Risus nullam eget felis eget nunc lobortis mattis.";
-topContentArray[1].children[0].innerHTML = "about";
-topContentArray[1].children[1].innerHTML = "About content lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod quis. Nulla facilisi cras fermentum odio eu feugiat pretium nibh. Risus nullam eget felis eget nunc lobortis mattis.";
+topContentArray[0].children[0].innerHTML = siteContent['main-content']['features-h4'];
+topContentArray[0].children[1].innerHTML = siteContent['main-content']['features-content'];
+topContentArray[1].children[0].innerHTML = siteContent['main-content']['about-h4'];
+topContentArray[1].children[1].innerHTML = siteContent['main-content']['about-content'];
 
 
 // Main content middle
-middleImg.src = 'img/mid-page-accent.jpg';
+middleImg.src = siteContent['main-content']['middle-img-src'];
 
 
 // Main content bottom
-bottomContentArray[0].children[0].innerHTML = "services";
-bottomContentArray[0].children[1].innerHTML = "Services content lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod quis. Nulla facilisi cras fermentum odio eu feugiat pretium nibh. Risus nullam eget felis eget nunc lobortis mattis.";
-bottomContentArray[1].children[0].innerHTML = "product";
-bottomContentArray[1].children[1].innerHTML = "Services content lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod quis. Nulla facilisi cras fermentum odio eu feugiat pretium nibh. Risus nullam eget felis eget nunc lobortis mattis.";
-bottomContentArray[2].children[0].innerHTML = "vision";
-bottomContentArray[2].children[1].innerHTML = "Services content lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod quis. Nulla facilisi cras fermentum odio eu feugiat pretium nibh. Risus nullam eget felis eget nunc lobortis mattis.";
+bottomContentArray[0].children[0].innerHTML = siteContent['main-content']['services-h4'];
+bottomContentArray[0].children[1].innerHTML = siteContent['main-content']['services-content'];
+bottomContentArray[1].children[0].innerHTML = siteContent['main-content']['product-h4'];
+bottomContentArray[1].children[1].innerHTML = siteContent['main-content']['product-content'];
+bottomContentArray[2].children[0].innerHTML = siteContent['main-content']['vision-h4'];
+bottomContentArray[2].children[1].innerHTML = siteContent['main-content']['vision-content'];
 
 
 // Contact
-contactArray[0].children[0].innerHTML = "Contact";
-contactArray[0].children[1].innerHTML = "123 Way 456 Street<br>Somewhere, USA";
-contactArray[0].children[2].innerHTML = "1 (888) 888-8888";
-contactArray[0].children[3].innerHTML = "sales@greatidea.io";
+contactArray[0].children[0].innerHTML = siteContent['contact']['contact-h4'];
+contactArray[0].children[1].innerHTML = siteContent['contact']['address'];
+contactArray[0].children[2].innerHTML = siteContent['contact']['phone'];
+contactArray[0].children[3].innerHTML = siteContent['contact']['email'];
+
+
+// Footer
+footerP.innerHTML = siteContent['footer']['copyright'];
+
+
+// Stretch
+ctaButton.style.borderRadius = "50px";
+
+ctaButton.onclick = function() {alert("Boo~");};
