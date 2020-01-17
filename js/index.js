@@ -40,3 +40,62 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// ###################################################################
+// Start my code...
+
+// Constant variables
+const headerNavA = document.querySelectorAll("nav a");
+const headerNavAArray = Array.from(headerNavA);
+const ctaImg = document.getElementById("cta-img");
+const ctaH1 = document.querySelector(".cta-text h1");
+const ctaButton = document.querySelector(".cta-text button");
+const middleImg = document.getElementById("middle-img");
+const topContent = document.querySelectorAll(".top-content .text-content");
+const topContentArray = Array.from(topContent);
+const bottomContent = document.querySelectorAll(".bottom-content .text-content");
+const bottomContentArray = Array.from(bottomContent);
+const contact = document.querySelectorAll(".contact");
+const contactArray = Array.from(contact);
+
+
+// Navigation
+headerNavAArray[0].innerHTML = "Services";
+headerNavAArray[1].innerHTML = "Product";
+headerNavAArray[2].innerHTML = "Vision";
+headerNavAArray[3].innerHTML = "Features";
+headerNavAArray[4].innerHTML = "About";
+headerNavAArray[5].innerHTML = "Contact";
+
+
+// Header
+ctaImg.src = 'img/header-img.png';
+ctaH1.innerHTML = "DOM<br>is<br>awesome"
+ctaButton.innerHTML = "Get Started!"
+
+
+// Main content top
+topContentArray[0].children[0].innerHTML = "features";
+topContentArray[0].children[1].innerHTML = "Features content lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod quis. Nulla facilisi cras fermentum odio eu feugiat pretium nibh. Risus nullam eget felis eget nunc lobortis mattis.";
+topContentArray[1].children[0].innerHTML = "about";
+topContentArray[1].children[1].innerHTML = "About content lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod quis. Nulla facilisi cras fermentum odio eu feugiat pretium nibh. Risus nullam eget felis eget nunc lobortis mattis.";
+
+
+// Main content middle
+middleImg.src = 'img/mid-page-accent.jpg';
+
+
+// Main content bottom
+bottomContentArray[0].children[0].innerHTML = "services";
+bottomContentArray[0].children[1].innerHTML = "Services content lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod quis. Nulla facilisi cras fermentum odio eu feugiat pretium nibh. Risus nullam eget felis eget nunc lobortis mattis.";
+bottomContentArray[1].children[0].innerHTML = "product";
+bottomContentArray[1].children[1].innerHTML = "Services content lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod quis. Nulla facilisi cras fermentum odio eu feugiat pretium nibh. Risus nullam eget felis eget nunc lobortis mattis.";
+bottomContentArray[2].children[0].innerHTML = "vision";
+bottomContentArray[2].children[1].innerHTML = "Services content lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod quis. Nulla facilisi cras fermentum odio eu feugiat pretium nibh. Risus nullam eget felis eget nunc lobortis mattis.";
+
+
+// Contact
+contactArray[0].children[0].innerHTML = "Contact";
+contactArray[0].children[1].innerHTML = "123 Way 456 Street<br>Somewhere, USA";
+contactArray[0].children[2].innerHTML = "1 (888) 888-8888";
+contactArray[0].children[3].innerHTML = "sales@greatidea.io";
